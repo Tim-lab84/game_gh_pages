@@ -1,0 +1,36 @@
+/** Global reset to make sure page looks the same on all browsers */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/** the usual 4 lines to make sure the canvas is centered */
+#canvas1 {
+  border: 5px solid black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*Make sure it fits all screens*/
+  max-width: 100%;
+  max-height: 100%;
+  font-family: "Creepster", cursive;
+}
+#player,
+#layer1,
+#layer2,
+#layer3,
+#layer4,
+#layer5,
+#enemy_fly,
+#enemy_spider_big,
+#enemy_plant,
+#fire,
+#collisionAnimation,
+#lives {
+  display: none;
+}
+
+/*
+dont draw images on the website but on canvas
+*/
