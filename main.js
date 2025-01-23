@@ -8,6 +8,13 @@ const bgAudio = new Audio("./assets/audio/background-music.ogg");
 
 // Ensure the audio loops continuously
 bgAudio.loop = true;
+//restart button
+const restartButton = document.getElementById("restart-button");
+
+// Restart Button Logic
+restartButton.addEventListener("click", () => {
+  location.reload(); // Reloads the page
+});
 
 // Handle music button click
 const musicButton = document.getElementById("music-button");

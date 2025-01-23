@@ -61,3 +61,100 @@ dont draw images on the website but on canvas
   box-shadow: 0 0 20px #ff4500, 0 0 40px #ff0000 inset;
   transform: scale(1.1);
 }
+
+#controls-description {
+  position: absolute;
+  bottom: 10px; /* Position it just above the bottom of the screen */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7); /* Dark background with transparency */
+  color: #fff;
+  padding: 20px;
+  font-family: "Creepster", cursive; /* Using the creepy font */
+  text-align: center;
+  border-radius: 10px;
+  width: 80%; /* Limit width so it doesn't stretch too far */
+  max-width: 600px;
+}
+
+#controls-description h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+#controls-description p {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+#controls-description ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#controls-description li {
+  font-size: 1.1em;
+  margin-bottom: 8px;
+}
+
+#controls-description strong {
+  color: #f39c12; /* Gold color for key names */
+}
+
+body {
+  background: linear-gradient(135deg, #000000, #2c3e50 50%, #1b2631);
+  background-size: 200% 200%;
+  animation: spooky-gradient 8s ease infinite;
+  color: white;
+  font-family: "Creepster", cursive;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes spooky-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#restart-button {
+  display: none; /* Hidden by default */
+  margin: 20px auto; /* Add some space from the canvas */
+  padding: 10px 20px;
+  background-color: #222;
+  color: #fff;
+  font-family: "Creepster", cursive;
+  font-size: 1.5rem;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+  text-shadow: 2px 2px 5px red; /* Give a spooky glow effect */
+  box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.5);
+}
+
+/* Hover effect for the button */
+#restart-button:hover {
+  background-color: #444;
+  color: red;
+  border-color: red;
+  text-shadow: 2px 2px 10px red;
+}
+
+/* Flex container to center content */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  margin: 0;
+  background-color: black; /* Spooky background */
+}
