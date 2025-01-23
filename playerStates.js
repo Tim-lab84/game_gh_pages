@@ -146,6 +146,7 @@ export class Rolling extends State {
 export class Diving extends State {
   constructor(game) {
     super("DIVING", game);
+    this.diveSound = new Audio("./assets/audio/hitground.wav");
   }
   enter() {
     this.game.player.frameX = 0;
@@ -165,6 +166,8 @@ export class Diving extends State {
     );
     //keep rolling at enter and as long as pressed
     if (this.game.player.onGround()) {
+      this.diveSound.currentTime = 0; // Reset the sound to start from the beginning
+      this.diveSound.play();
       this.game.player.setState(states.RUNNING, 1);
       //small wrapper for diving explosion , if diving state and hit ground => state =running
       for (let i = 0; i < 30; i++) {

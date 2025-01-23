@@ -141,6 +141,8 @@ export class Player {
       ) {
         //collision detected (delete enemy)
         enemy.markedForDeletion = true;
+        const collisionSound = new Audio("./assets/audio/hit.wav");
+        collisionSound.play();
         //collision animation
         this.game.collisions.push(
           new CollisionAnimation(
@@ -163,7 +165,11 @@ export class Player {
           //
         } else {
           this.setState(6, 0); //6 dizzy state , 0 to stop game moving
-          this.game.score -= 5;
+          if (this.game.score >= 5) {
+            this.game.score -= 5;
+          } else {
+            this.game.score = 0; // Ensure score stays at 0
+          }
           this.game.lives--;
           if (this.game.lives <= 0) this.game.gameOver = true;
         }

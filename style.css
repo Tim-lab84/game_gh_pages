@@ -34,3 +34,30 @@
 /*
 dont draw images on the website but on canvas
 */
+
+#music-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#music-button {
+  font-family: "Creepster", cursive;
+  font-size: 24px;
+  color: #fff;
+  background: linear-gradient(145deg, #000000, #3c3c3c);
+  border: 3px solid #ff0000;
+  border-radius: 15px;
+  padding: 15px 30px;
+  cursor: pointer;
+  text-shadow: 0 0 8px #ff0000, 0 0 15px #ff4500;
+  box-shadow: 0 0 15px #ff0000, 0 0 30px #ff4500 inset;
+  transition: all 0.3s ease;
+}
+
+#music-button:hover {
+  background: linear-gradient(145deg, #3c3c3c, #000000);
+  box-shadow: 0 0 20px #ff4500, 0 0 40px #ff0000 inset;
+  transform: scale(1.1);
+}

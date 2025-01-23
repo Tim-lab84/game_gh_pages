@@ -3,7 +3,31 @@ import { InputHandler } from "./input.js";
 import { Background } from "./background.js";
 import { FlyingEnemy, ClimbingEnemy, GroundEnemy } from "./enemies.js";
 import { UI } from "./UI.js"; //how do we update architecture when changing file names? it doesnt recognize
+//rip audio
+const bgAudio = new Audio("./assets/audio/background-music.ogg");
 
+// Ensure the audio loops continuously
+bgAudio.loop = true;
+
+// Handle music button click
+const musicButton = document.getElementById("music-button");
+musicButton.addEventListener("click", () => {
+  if (bgAudio.paused) {
+    bgAudio.play();
+    musicButton.textContent = "🎵 Music is Playing... 🎵";
+  } else {
+    bgAudio.pause();
+    musicButton.textContent = "🎵 Summon the Music 🎵";
+  }
+});
+
+// Prevent "Enter" key from triggering the button
+musicButton.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault(); // Prevent default behavior
+  }
+});
+//
 /* Wrapper to make sure stylesheet and images are loaded
 before running the script */
 window.addEventListener("load", function () {
@@ -12,6 +36,12 @@ window.addEventListener("load", function () {
   canvas.width = 900;
   canvas.height = 500;
 
+  /*   this.document.addEventListener("mousemove", () => {
+    setTimeout(() => {
+      bgAudio.play();
+    }, 2500);
+  });
+ */
   class Game {
     constructor(width, height) {
       this.width = width;
