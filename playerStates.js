@@ -36,6 +36,8 @@ export class Sitting extends State {
       this.game.player.setState(states.RUNNING, 1);
     } else if (input.includes("Enter")) {
       this.game.player.setState(states.ROLLING, 2);
+    } else if (input.includes("ArrowUp")) {
+      this.game.player.setState(states.JUMPING, 1);
     }
   }
 }
