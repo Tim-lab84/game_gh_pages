@@ -18,11 +18,24 @@
   </head>
   <body>
     <canvas id="canvas1"></canvas>
-    <button id="restart-button" class="button spooky-button">
-      🔄 Restart Game
-    </button>
-    <div id="music-container">
+
+    <!-- New container for buttons -->
+    <div id="button-container">
+      <button id="restart-button" class="button spooky-button">
+        🔄 Restart Game
+      </button>
       <button id="music-button" tabindex="-1">🎵 Summon the Music 🎵</button>
+      <div id="controls-description">
+        <h2>Game Controls</h2>
+        <p>Use the following keys to interact with the game:</p>
+        <ul>
+          <li><strong>Arrow Left / Arrow Right:</strong> Move left or right</li>
+          <li><strong>Arrow Up:</strong> Jump</li>
+          <li><strong>Arrow Down:</strong> Dive or Crouch</li>
+          <li><strong>Enter:</strong> Roll (When on the ground)</li>
+        </ul>
+        <p><strong>Tip:</strong> Try to dodge enemies and collect power-ups!</p>
+      </div>
     </div>
 
     <img src="assets/images/player.png" alt="player" id="player" />
@@ -43,17 +56,7 @@
 
     <img id="lives" src="assets/images/heart.png" />
 
-    <!--    <div id="controls-description">
-      <h2>Game Controls</h2>
-      <p>Use the following keys to interact with the game:</p>
-      <ul>
-        <li><strong>Arrow Left / Arrow Right:</strong> Move left or right</li>
-        <li><strong>Arrow Up:</strong> Jump</li>
-        <li><strong>Arrow Down:</strong> Dive or Crouch</li>
-        <li><strong>Enter:</strong> Roll (When on the ground)</li>
-      </ul>
-      <p><strong>Tip:</strong> Try to dodge enemies and collect power-ups!</p>
-    </div> -->
+    <!-- Uncommented controls description -->
 
     <script type="module" src="main.js"></script>
   </body>

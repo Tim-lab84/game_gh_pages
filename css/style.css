@@ -5,86 +5,6 @@
   box-sizing: border-box;
 }
 
-/** Canvas centered on the screen */
-#canvas1 {
-  border: 5px solid black;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 100%;
-  max-height: 100%;
-  font-family: "Creepster", cursive;
-}
-
-/** Music Button Styling */
-#music-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
-
-#music-button {
-  font-family: "Creepster", cursive;
-  font-size: 20px; /* Reduced font size */
-  color: #fff;
-  background: linear-gradient(145deg, #000000, #3c3c3c);
-  border: 3px solid #ff0000;
-  border-radius: 15px;
-  padding: 10px 20px; /* Reduced padding */
-  cursor: pointer;
-  text-shadow: 0 0 8px #ff0000, 0 0 15px #ff4500;
-  box-shadow: 0 0 15px #ff0000, 0 0 30px #ff4500 inset;
-  transition: all 0.3s ease;
-}
-
-#music-button:hover {
-  background: linear-gradient(145deg, #3c3c3c, #000000);
-  box-shadow: 0 0 20px #ff4500, 0 0 40px #ff0000 inset;
-  transform: scale(1.1);
-}
-
-/** Controls Description Box */
-#controls-description {
-  position: absolute;
-  bottom: 10px; /* Position it just above the bottom of the screen */
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.7); /* Dark background with transparency */
-  color: #fff;
-  padding: 15px; /* Reduced padding */
-  font-family: "Creepster", cursive;
-  text-align: center;
-  border-radius: 10px;
-  width: 70%; /* Reduced width */
-  max-width: 500px; /* Set a max width */
-}
-
-#controls-description h2 {
-  font-size: 1.2em; /* Smaller title */
-  margin-bottom: 8px;
-}
-
-#controls-description p {
-  font-size: 1em; /* Smaller text */
-  margin-bottom: 8px;
-}
-
-#controls-description ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-#controls-description li {
-  font-size: 1em; /* Smaller list items */
-  margin-bottom: 6px;
-}
-
-#controls-description strong {
-  color: #f39c12; /* Gold color for key names */
-}
-
 /** Body Setup */
 body {
   background: linear-gradient(135deg, #000000, #2c3e50 50%, #1b2631);
@@ -113,6 +33,106 @@ body {
   }
 }
 
+/** Canvas centered on the screen */
+#canvas1 {
+  border: 5px solid black;
+  margin-top: 20px; /* Add margin to ensure space above the canvas */
+  max-width: 100%;
+  max-height: 100%;
+  font-family: "Creepster", cursive;
+}
+
+/** New: Button Container */
+#button-container {
+  display: flex;
+  flex-direction: column; /* Stack the elements vertically */
+  align-items: center;
+  gap: 20px; /* Space between buttons and controls */
+  margin-top: 20px; /* Space between canvas and container */
+  text-align: center;
+}
+
+/** Restart Button */
+#restart-button {
+  padding: 10px 20px;
+  background-color: #222;
+  color: #fff;
+  font-family: "Creepster", cursive;
+  font-size: 1.5rem;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-shadow: 2px 2px 5px red;
+  box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.5);
+}
+
+#restart-button:hover {
+  background-color: #444;
+  color: red;
+  border-color: red;
+  text-shadow: 2px 2px 10px red;
+}
+
+/** Music Button Styling */
+#music-button {
+  font-family: "Creepster", cursive;
+  font-size: 20px;
+  color: #fff;
+  background: linear-gradient(145deg, #000000, #3c3c3c);
+  border: 3px solid #ff0000;
+  border-radius: 15px;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-shadow: 0 0 8px #ff0000, 0 0 15px #ff4500;
+  box-shadow: 0 0 15px #ff0000, 0 0 30px #ff4500 inset;
+  transition: all 0.3s ease;
+}
+
+#music-button:hover {
+  background: linear-gradient(145deg, #3c3c3c, #000000);
+  box-shadow: 0 0 20px #ff4500, 0 0 40px #ff0000 inset;
+  transform: scale(1.1);
+}
+
+/** Game Controls Description Box: Repositioned to the right side */
+#controls-description {
+  background-color: rgba(0, 0, 0, 0.7); /* Dark background with transparency */
+  color: #fff;
+  padding: 15px;
+  font-family: "Creepster", cursive;
+  text-align: center;
+  border-radius: 10px;
+  width: 70%; /* Adjusted width for a responsive design */
+  max-width: 500px; /* Limit maximum width */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Add subtle shadow for visibility */
+  margin-top: 20px; /* Space above the controls box */
+}
+
+#controls-description h2 {
+  font-size: 1.4em; /* Slightly larger title */
+  margin-bottom: 8px;
+}
+
+#controls-description p {
+  font-size: 1em;
+  margin-bottom: 8px;
+}
+
+#controls-description ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#controls-description li {
+  font-size: 1em;
+  margin-bottom: 6px;
+}
+
+#controls-description strong {
+  color: #f39c12; /* Gold color for key names */
+}
+
 /** Hide Game Elements by default (player, layers, enemies, etc.) */
 #player,
 #layer1,
@@ -127,29 +147,4 @@ body {
 #collisionAnimation,
 #lives {
   display: none;
-}
-
-/** Restart Button */
-#restart-button {
-  display: none;
-  margin: 20px auto;
-  padding: 10px 20px;
-  background-color: #222;
-  color: #fff;
-  font-family: "Creepster", cursive;
-  font-size: 1.5rem;
-  border: 2px solid #fff;
-  border-radius: 5px;
-  cursor: pointer;
-  text-align: center;
-  display: block;
-  text-shadow: 2px 2px 5px red;
-  box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.5);
-}
-
-#restart-button:hover {
-  background-color: #444;
-  color: red;
-  border-color: red;
-  text-shadow: 2px 2px 10px red;
 }
