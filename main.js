@@ -78,7 +78,7 @@ window.addEventListener("load", function () {
 
       //time limit
       this.time = 0;
-      this.maxTime = 30000;
+      this.maxTime = 60000;
       this.gameOver = false;
       //
       this.lives = 5;
