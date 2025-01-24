@@ -28,6 +28,19 @@ musicButton.addEventListener("click", () => {
   }
 });
 
+window.addEventListener("keydown", (event) => {
+  const keysToPrevent = [
+    "ArrowUp",
+    "ArrowDown",
+    "ArrowLeft",
+    "ArrowRight",
+    "Space",
+  ];
+  if (keysToPrevent.includes(event.key)) {
+    event.preventDefault();
+  }
+});
+
 // Prevent "Enter" key from triggering the button
 musicButton.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
